@@ -24,7 +24,7 @@ version: 2
 
 workflows:
   version: 2
-    validate_pr:
-      jobs:
-        - python2_test
-        - python3_test
+  validate_pr:
+    jobs:
+      - python2_test
+      - python3_test
