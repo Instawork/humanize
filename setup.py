@@ -23,8 +23,8 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: POSIX',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 2.7',
     ],
     keywords='humanize time size',
     author='Jason Moiron',
@@ -36,7 +36,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     test_suite="tests",
-    tests_require=['mock'],
+    tests_require=['mock', 'pylint==1.9.3'],
     install_requires=[
       # -*- Extra requirements: -*-
     ],
