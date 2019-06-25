@@ -20,11 +20,3 @@ version: 2
             command: |
               python setup.py test
               pylint **/**.py --rcfile=.pylintrc
-
-
-workflows:
-  version: 2
-  validate-pr:
-    jobs:
-      - python2_test
-      - python3_test
