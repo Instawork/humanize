@@ -1,6 +1,6 @@
-import sys
+import six
 
-if sys.version_info < (3,):
+if six.PY2:
     string_types = (basestring,)
 else:
     string_types = (str,)
