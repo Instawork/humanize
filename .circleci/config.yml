@@ -1,22 +1,29 @@
-version: 2
-  jobs:
-    python2_test:
-      docker:
-          - image: circleci/python:2.7
-      steps:
-        - checkout
-        - run:
-            name: Tests
-            command: |
-              python setup.py test
-              pylint **/**.py --rcfile=.pylintrc
-    python3_test:
-      docker:
-        - image: circleci/python:3.6
-      steps:
-        - checkout
-        - run:
-            name: Tests
-            command: |
-              python setup.py test
-              pylint **/**.py --rcfile=.pylintrc
+---
+version: 2.1
+jobs:
+  python2_test:
+    docker:
+        - image: circleci/python:2.7
+    steps:
+      - checkout
+      - run:
+          name: Tests
+          command: |
+            python setup.py test
+            pylint **/**.py --rcfile=.pylintrc
+  python3_test:
+    docker:
+      - image: circleci/python:3.6
+    steps:
+      - checkout
+      - run:
+          name: Tests
+          command: |
+            python setup.py test
+            pylint **/**.py --rcfile=.pylintrc
+workflows:
+  version: 2
+  validate-pr:
+    jobs:
+      - python2_test
+      - python3_test
