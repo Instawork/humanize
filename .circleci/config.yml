@@ -11,7 +11,7 @@ jobs:
           command: |
             sudo pip install pylint==1.9.3 mock
             python setup.py test
-            pylint **/**.py --rcfile=.pylintrc
+            pylint --rcfile=.pylintrc humanize tests
   python3_test:
     docker:
       - image: circleci/python:3.6
@@ -22,7 +22,7 @@ jobs:
           command: |
             sudo pip install pylint==1.9.3 mock
             python setup.py test
-            pylint **/**.py --rcfile=.pylintrc
+            pylint --rcfile=.pylintrc humanize tests
 workflows:
   version: 2
   validate-pr:
