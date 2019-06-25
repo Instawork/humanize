@@ -9,7 +9,6 @@ jobs:
       - run:
           name: Tests
           command: |
-            sudo pip install pylint==1.9.3
             python setup.py test
             pylint **/**.py --rcfile=.pylintrc
   python3_test:
@@ -20,7 +19,6 @@ jobs:
       - run:
           name: Tests
           command: |
-            sudo pip install pylint==1.9.3
             python setup.py test
             pylint **/**.py --rcfile=.pylintrc
 workflows:
