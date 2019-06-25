@@ -22,3 +22,9 @@ version: 2
              pylint **/**.py --rcfile=.pylintrc
 
 
+workflows:
+  version: 2
+    validate_pr:
+      jobs:
+        - python2_test
+        - python3_test
